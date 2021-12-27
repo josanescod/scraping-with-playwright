@@ -40,9 +40,9 @@ async function web() {
 
   console.dir(subjects);
 
-  //writing data
-  let data = JSON.stringify(subjects, null, 2);
-  fs.writeFileSync("data.json", data);
+  //writing async data
+  let data = await JSON.stringify(subjects, null, 2);
+  await fs.promises.writeFile("data.json", data);
 
   await browser.close();
 }
