@@ -1,0 +1,14 @@
+{
+  "name": "scraping-with-playwright",
+  "version": "1.0.0",
+  "description": "Simple example of extracting data from a [web page](https://josanescod.github.io/search-bar-uoc/) with [playwright](https://playwright.dev/)",
+  "main": "scraper.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "playwright": "^1.17.1"
+  }
+}
