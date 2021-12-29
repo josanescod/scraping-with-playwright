@@ -7,7 +7,7 @@ try {
   if (fs.existsSync(path)) {
     console.log("the file already exists");
   } else {
-    console.log("the file does not exist");
+    console.log("scraping data...");
     scraper.web();
   }
 } catch (err) {
