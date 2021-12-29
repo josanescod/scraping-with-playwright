@@ -20,5 +20,5 @@ Simple example of extracting data from a [web page](https://josanescod.github.io
 git clone https://github.com/josanescod/scraping-with-playwright.git
 cd scraping-with-playwright
 npm install
-node scraper.js
+node app.js
 ```

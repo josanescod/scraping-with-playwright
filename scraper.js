@@ -21,21 +21,23 @@ async function web() {
   });
 
   const subjects = await page.$$eval("tr", (dataSubjects) => {
-    return dataSubjects.map((subject) => {
-      const title = subject.querySelector(".subject").textContent;
-      const whatsapp = subject.querySelector(
-        ".level-right > .whatsapp-color"
-      ).href;
-      const telegram = subject.querySelector(
-        ".level-right > .telegram-color"
-      ).href;
+    return dataSubjects
+      .filter((tr) => tr.rowIndex <= 5) //only scrap 5 elements from a set
+      .map((subject) => {
+        const title = subject.querySelector(".subject").textContent;
+        const whatsapp = subject.querySelector(
+          ".level-right > .whatsapp-color"
+        ).href;
+        const telegram = subject.querySelector(
+          ".level-right > .telegram-color"
+        ).href;
 
-      return {
-        title: title.trim(),
-        whatsapp: whatsapp.trim(),
-        telegram: telegram.trim(),
-      };
-    });
+        return {
+          title: title.trim(),
+          whatsapp: whatsapp.trim(),
+          telegram: telegram.trim(),
+        };
+      });
   });
 
   console.dir(subjects);
@@ -47,4 +49,4 @@ async function web() {
   await browser.close();
 }
 
-web();
+module.exports.web = web;
